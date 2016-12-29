@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="answer">
+        <item>Бесспорно</item>
+        <item>Предрешено</item>
+        <item>Никаких сомнений</item>
+        <item>Определённо да</item>
+        <item>Можешь быть уверен в этом</item>
+        <item>Мне кажется — да</item>
+        <item>Вероятнее всего</item>
+        <item>Хорошие перспективы</item>
+        <item>Знаки говорят — да</item>
+        <item>Пока не ясно, попробуй снова</item>
+        <item>Спроси позже</item>
+        <item>Лучше не рассказывать</item>
+        <item>Сейчас нельзя предсказать</item>
+        <item>Сконцентрируйся и спроси опять</item>
+        <item>Даже не думай</item>
+        <item>Мой ответ — нет</item>
+        <item>По моим данным — нет</item>
+        <item>Перспективы не очень хорошие</item>
+        <item>Весьма сомнительно</item>
+
+    </string-array>
+</resources>
