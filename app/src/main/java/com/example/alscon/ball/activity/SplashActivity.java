@@ -1,4 +1,4 @@
-package com.example.alscon.ball;
+package com.example.alscon.ball.activity;
 
 import android.content.Intent;
 import android.os.Bundle;

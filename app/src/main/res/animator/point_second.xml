@@ -5,7 +5,7 @@
         android:propertyName="fillColor"
         android:repeatCount="9"
         android:repeatMode="reverse"
-        android:valueFrom="#FF000000"
+        android:valueFrom="#792040"
         android:valueTo="#FFFFFF"
         android:valueType="colorType"/>
 </set>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
                  xmlns:tools="http://schemas.android.com/tools"
-                 android:drawable="@drawable/ball_eight"
+                 android:drawable="@drawable/ball_download_fifth"
                  tools:ignore="NewApi">
 
     <target
@@ -16,6 +16,11 @@
         android:animation="@animator/circle_clockwise"/>
     <target
         android:name="point_third_anim"
-        android:animation="@animator/circle_eight"/>
-
+        android:animation="@animator/point_third"/>
+    <target
+        android:name="point_first_anim"
+        android:animation="@animator/point_first"/>
+    <target
+        android:name="point_second_anim"
+        android:animation="@animator/point_second"/>
 </animated-vector>
