@@ -72,7 +72,9 @@ public class BackgroundActivity extends Activity implements Constants {
                         broadcastData(intent, R.drawable.sixth_background, R.drawable.ball_eight_sixth_anim, R.drawable.ball_download_sixth_anim, R.drawable.ball_sixth);
                         break;
                 }
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }
         }));
     }
@@ -82,7 +84,6 @@ public class BackgroundActivity extends Activity implements Constants {
         intent.putExtra("background_eight_ball", ballEight);
         intent.putExtra("background_download_ball", ballDownload);
         intent.putExtra("ball", ball);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
     }
 
     private void remove() {

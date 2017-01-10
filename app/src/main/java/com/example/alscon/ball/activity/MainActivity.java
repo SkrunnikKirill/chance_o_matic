@@ -101,14 +101,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             ((Animatable) drawable).start();
                         }
                         break;
-                    case STATUS_EIGHT_ANIMATION:
+
+                    case STATUS_DOWNLOAD_ANIMATION:
                         ballAnimations.setImageResource(download);
                         drawable = ballAnimations.getDrawable();
                         if (drawable instanceof Animatable) {
                             ((Animatable) drawable).start();
                         }
-                        break;
-                    case STATUS_DOWNLOAD_ANIMATION:
                         break;
                     case STATUS_RANDOM:
                         listAnswer = getResources().getStringArray(R.array.answer);
@@ -138,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public void run() {
                         try {
                             handler.sendEmptyMessage(STATUS_TEXT);
-                            handler.sendEmptyMessage(STATUS_EIGHT_ANIMATION);
+                            handler.sendEmptyMessage(STATUS_DOWNLOAD_ANIMATION);
                             TimeUnit.SECONDS.sleep(3);
                             handler.sendEmptyMessage(STATUS_RANDOM);
                         } catch (InterruptedException e) {

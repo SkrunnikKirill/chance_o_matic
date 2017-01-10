@@ -16,11 +16,11 @@
         android:animation="@animator/circle_clockwise"/>
     <target
         android:name="point_third_anim"
-        android:animation="@animator/point_third"/>
+        android:animation="@animator/point_third_ball_fourth"/>
     <target
         android:name="point_first_anim"
-        android:animation="@animator/point_first"/>
+        android:animation="@animator/point_first_ball_fourth"/>
     <target
         android:name="point_second_anim"
-        android:animation="@animator/point_second"/>
+        android:animation="@animator/point_second_ball_fourth"/>
 </animated-vector>
