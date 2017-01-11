@@ -1,4 +1,4 @@
-package com.example.alscon.ball;
+package com.example.alscon.ball.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.alscon.ball.AdapterElements;
+import com.example.alscon.ball.R;
 
 import java.util.ArrayList;
 

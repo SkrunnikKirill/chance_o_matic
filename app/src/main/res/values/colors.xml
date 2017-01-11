@@ -4,4 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="transparent">#55000000</color>
+    <color name="yellow">#c3b986</color>
+    <color name="orange">#e2805d</color>
+    <color name="blue">#045283</color>
+    <color name="red">#c96565</color>
+    <color name="dark_blue">#163851</color>
+    <color name="pink">#591838</color>
 </resources>

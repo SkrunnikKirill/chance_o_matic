@@ -14,6 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.alscon.ball.Constants;
+import com.example.alscon.ball.Preferences;
 import com.example.alscon.ball.R;
 
 import java.util.concurrent.TimeUnit;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Handler handler;
     private Drawable drawable;
     private RelativeLayout mRelativeLayout;
-    private int eightBall, downloadBall, ball, back;
+    private int eightBall, downloadBall, ball, back, textColor;
     private Preferences mPreferences;
 
     @Override
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mPreferences = new Preferences(getApplicationContext());
         getIntentInformations();
         checkPreferences();
-        handler(eightBall, downloadBall, ball);
+        handler(eightBall, downloadBall, ball, textColor);
         mRelativeLayout.setBackgroundResource(back);
         ballAnimations.setOnClickListener(this);
         background.setOnClickListener(this);
@@ -49,18 +50,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void checkPreferences() {
         try {
-            if (mPreferences.loadText(PREFERENCES_EIGHT_BALL) != 0 || mPreferences.loadText(PREFERENCES_BALL) != 0
-                    || mPreferences.loadText(PREFERENCES_DOWNLOAD_BALL) != 0 || mPreferences.loadText(PREFERENCES_BACKGROUND) != 0) {
-                eightBall = mPreferences.loadText(PREFERENCES_EIGHT_BALL);
-                ball = mPreferences.loadText(PREFERENCES_BALL);
-                downloadBall = mPreferences.loadText(PREFERENCES_DOWNLOAD_BALL);
-                back = mPreferences.loadText(PREFERENCES_BACKGROUND);
+            if (mPreferences.load(PREFERENCES_EIGHT_BALL) != 0 || mPreferences.load(PREFERENCES_BALL) != 0
+                    || mPreferences.load(PREFERENCES_DOWNLOAD_BALL) != 0 || mPreferences.load(PREFERENCES_BACKGROUND) != 0 ||
+                    mPreferences.load(PREFERENCES_TEXT_COLOR) != 0) {
+                eightBall = mPreferences.load(PREFERENCES_EIGHT_BALL);
+                ball = mPreferences.load(PREFERENCES_BALL);
+                downloadBall = mPreferences.load(PREFERENCES_DOWNLOAD_BALL);
+                back = mPreferences.load(PREFERENCES_BACKGROUND);
+                textColor = mPreferences.load(PREFERENCES_TEXT_COLOR);
+
             }
         } catch (NullPointerException e) {
             back = R.drawable.first_background;
             eightBall = R.drawable.ball_eight_first_anim;
             downloadBall = R.drawable.ball_download_first_anim;
             ball = R.drawable.ball_first;
+            textColor = R.color.yellow;
         }
     }
 
@@ -70,15 +75,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ball = intent.getIntExtra("ball", 0);
         downloadBall = intent.getIntExtra("background_download_ball", 0);
         back = intent.getIntExtra("background", 0);
+        textColor = intent.getIntExtra("text_color", 0);
         save();
     }
 
     private void save() {
-        if (eightBall != 0 || downloadBall != 0 || ball != 0 || back != 0) {
-            mPreferences.saveText(eightBall, PREFERENCES_EIGHT_BALL);
-            mPreferences.saveText(ball, PREFERENCES_BALL);
-            mPreferences.saveText(downloadBall, PREFERENCES_DOWNLOAD_BALL);
-            mPreferences.saveText(back, PREFERENCES_BACKGROUND);
+        if (eightBall != 0 || downloadBall != 0 || ball != 0 || back != 0 || textColor != 0) {
+            mPreferences.save(eightBall, PREFERENCES_EIGHT_BALL);
+            mPreferences.save(ball, PREFERENCES_BALL);
+            mPreferences.save(downloadBall, PREFERENCES_DOWNLOAD_BALL);
+            mPreferences.save(back, PREFERENCES_BACKGROUND);
+            mPreferences.save(textColor, PREFERENCES_TEXT_COLOR);
         }
     }
 
@@ -88,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void handler(final int eight, final int download, final int ball) {
+    private void handler(final int eight, final int download, final int ball, final int textColor) {
         handler = new Handler() {
             @Override
             public void handleMessage(Message msg) {
@@ -103,6 +110,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         break;
 
                     case STATUS_DOWNLOAD_ANIMATION:
+                        background.setEnabled(false);
+                        ballAnimations.setEnabled(false);
                         ballAnimations.setImageResource(download);
                         drawable = ballAnimations.getDrawable();
                         if (drawable instanceof Animatable) {
@@ -110,10 +119,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         }
                         break;
                     case STATUS_RANDOM:
+                        answer.setTextColor(getResources().getColor(textColor));
                         listAnswer = getResources().getStringArray(R.array.answer);
                         int numberAnswer = (int) (Math.random() * 19);
                         answer.setText(listAnswer[numberAnswer]);
                         ballAnimations.setImageResource(ball);
+                        background.setEnabled(true);
+                        ballAnimations.setEnabled(true);
                         break;
                     case STATUS_TEXT:
                         answer.setText("");

@@ -14,5 +14,6 @@ public interface Constants {
     String PREFERENCES_EIGHT_BALL = "ball_eight_first_anim";
     String PREFERENCES_DOWNLOAD_BALL = "ball_download_first_anim";
     String PREFERENCES_BACKGROUND = "background";
+    String PREFERENCES_TEXT_COLOR = "text_color";
 
 }

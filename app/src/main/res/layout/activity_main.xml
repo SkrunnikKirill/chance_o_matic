@@ -26,8 +26,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:gravity="center"
-        android:textColor="@android:color/black"
-        android:textSize="17sp"/>
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/background"
@@ -40,7 +39,8 @@
         android:layout_marginRight="10dp"
         android:clickable="true"
         android:text="Backgrounds"
-        android:textColor="@android:color/background_dark"/>
+        android:textColor="@android:color/background_dark"
+        android:textSize="20sp"/>
 
 </RelativeLayout>
 

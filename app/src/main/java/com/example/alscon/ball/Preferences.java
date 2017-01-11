@@ -1,4 +1,4 @@
-package com.example.alscon.ball.activity;
+package com.example.alscon.ball;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -17,7 +17,7 @@ public class Preferences {
 
     }
 
-    public void saveText(Integer userId, String constant) {
+    public void save(Integer userId, String constant) {
         sharedPreferences = context.getSharedPreferences(constant, Context.MODE_PRIVATE);
         SharedPreferences.Editor ed = sharedPreferences.edit();
         ed.putInt(constant, userId);
@@ -25,7 +25,7 @@ public class Preferences {
 
     }
 
-    public Integer loadText(String constant) {
+    public Integer load(String constant) {
         Integer savedText = null;
         sharedPreferences = context.getSharedPreferences(constant, Context.MODE_PRIVATE);
         if (sharedPreferences.contains(constant)) {
