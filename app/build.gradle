@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
     defaultConfig {
-        applicationId "com.example.alscon.ball_eight"
+        applicationId "com.example.alscon.chance_o_matic"
         minSdkVersion 17
         targetSdkVersion 25
         versionCode 1

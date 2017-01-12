@@ -1,4 +1,4 @@
-package com.example.alscon.ball;
+package com.example.alscon.chance_o_matic;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

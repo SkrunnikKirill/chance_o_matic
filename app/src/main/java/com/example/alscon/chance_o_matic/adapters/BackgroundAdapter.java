@@ -1,4 +1,4 @@
-package com.example.alscon.ball.adapters;
+package com.example.alscon.chance_o_matic.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.alscon.ball.AdapterElements;
+import com.example.alscon.chance_o_matic.AdapterElements;
 import com.example.alscon.ball.R;
 
 import java.util.ArrayList;
@@ -51,7 +51,6 @@ public class BackgroundAdapter extends RecyclerView.Adapter<BackgroundAdapter.Vi
 
         public ViewHolder(View v) {
             super(v);
-
             textView = (TextView) v.findViewById(R.id.text);
             imageView = (ImageView) v.findViewById(R.id.image);
         }

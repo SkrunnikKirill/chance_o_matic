@@ -1,4 +1,4 @@
-package com.example.alscon.ball.activity;
+package com.example.alscon.chance_o_matic.activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,12 +8,12 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.example.alscon.ball.AdapterElements;
-import com.example.alscon.ball.Preferences;
-import com.example.alscon.ball.adapters.BackgroundAdapter;
-import com.example.alscon.ball.Constants;
+import com.example.alscon.chance_o_matic.AdapterElements;
+import com.example.alscon.chance_o_matic.Constants;
+import com.example.alscon.chance_o_matic.Preferences;
 import com.example.alscon.ball.R;
-import com.example.alscon.ball.RecyclerItemClickListener;
+import com.example.alscon.chance_o_matic.RecyclerItemClickListener;
+import com.example.alscon.chance_o_matic.adapters.BackgroundAdapter;
 
 import java.util.ArrayList;
 

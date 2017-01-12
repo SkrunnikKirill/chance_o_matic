@@ -1,4 +1,4 @@
-package com.example.alscon.ball.activity;
+package com.example.alscon.chance_o_matic.activity;
 
 import android.content.Intent;
 import android.os.Bundle;

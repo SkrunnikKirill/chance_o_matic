@@ -1,4 +1,4 @@
-package com.example.alscon.ball;
+package com.example.alscon.chance_o_matic;
 
 /**
  * Created by Alscon on 04-Jan-17.

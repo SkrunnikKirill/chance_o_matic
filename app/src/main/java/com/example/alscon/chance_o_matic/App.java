@@ -1,4 +1,4 @@
-package com.example.alscon.ball;
+package com.example.alscon.chance_o_matic;
 
 import android.app.Application;
 
@@ -10,10 +10,6 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
     }
 }

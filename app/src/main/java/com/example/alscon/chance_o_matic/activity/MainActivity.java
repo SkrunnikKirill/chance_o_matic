@@ -1,4 +1,4 @@
-package com.example.alscon.ball.activity;
+package com.example.alscon.chance_o_matic.activity;
 
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -13,8 +13,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.example.alscon.ball.Constants;
-import com.example.alscon.ball.Preferences;
+import com.example.alscon.chance_o_matic.Constants;
+import com.example.alscon.chance_o_matic.Preferences;
 import com.example.alscon.ball.R;
 
 import java.util.concurrent.TimeUnit;

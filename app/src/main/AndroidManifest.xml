@@ -3,14 +3,14 @@
           package="com.example.alscon.ball">
 
     <application
-        android:name=".App"
+        android:name="com.example.alscon.chance_o_matic.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.SplashActivity"
+            android:name="com.example.alscon.chance_o_matic.activity.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -20,11 +20,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.example.alscon.chance_o_matic.activity.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
-            android:name=".activity.BackgroundActivity"
+            android:name="com.example.alscon.chance_o_matic.activity.BackgroundActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Transparent"/>
     </application>
