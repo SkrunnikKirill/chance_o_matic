@@ -15,5 +15,6 @@ public interface Constants {
     String PREFERENCES_DOWNLOAD_BALL = "ball_download_first_anim";
     String PREFERENCES_BACKGROUND = "background";
     String PREFERENCES_TEXT_COLOR = "text_color";
+    int SPLASH_DISPLAY_DURATION = 1000;
 
 }
