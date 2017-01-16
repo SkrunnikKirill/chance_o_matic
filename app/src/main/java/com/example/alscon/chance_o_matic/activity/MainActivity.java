@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Handler handler;
     private Drawable drawable;
     private RelativeLayout mRelativeLayout;
-    private int eightBall, downloadBall, ball, back, textColor;
+    private int eightBall, downloadBall, ball, back, textColor, backgroundTextColor;
     private Preferences mPreferences;
 
     @Override
@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getIntentInformations();
         checkPreferences();
         handler(eightBall, downloadBall, ball, textColor);
+        background.setTextColor(getResources().getColor(backgroundTextColor));
         mRelativeLayout.setBackgroundResource(back);
         ballAnimations.setOnClickListener(this);
         background.setOnClickListener(this);
@@ -58,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 downloadBall = mPreferences.load(PREFERENCES_DOWNLOAD_BALL);
                 back = mPreferences.load(PREFERENCES_BACKGROUND);
                 textColor = mPreferences.load(PREFERENCES_TEXT_COLOR);
+                backgroundTextColor = mPreferences.load(PREFERENCES_BACKGROUND_TEXT_COLOR);
 
             }
         } catch (NullPointerException e) {
@@ -66,6 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             downloadBall = R.drawable.ball_download_first_anim;
             ball = R.drawable.ball_first;
             textColor = R.color.yellow;
+            backgroundTextColor = R.color.white;
         }
     }
 
@@ -76,16 +79,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         downloadBall = intent.getIntExtra("background_download_ball", 0);
         back = intent.getIntExtra("background", 0);
         textColor = intent.getIntExtra("text_color", 0);
+        backgroundTextColor = intent.getIntExtra("color_background_text", 0);
         save();
     }
 
     private void save() {
-        if (eightBall != 0 || downloadBall != 0 || ball != 0 || back != 0 || textColor != 0) {
+        if (eightBall != 0 || downloadBall != 0 || ball != 0 || back != 0 || textColor != 0 || backgroundTextColor != 0) {
             mPreferences.save(eightBall, PREFERENCES_EIGHT_BALL);
             mPreferences.save(ball, PREFERENCES_BALL);
             mPreferences.save(downloadBall, PREFERENCES_DOWNLOAD_BALL);
             mPreferences.save(back, PREFERENCES_BACKGROUND);
             mPreferences.save(textColor, PREFERENCES_TEXT_COLOR);
+            mPreferences.save(backgroundTextColor, PREFERENCES_BACKGROUND_TEXT_COLOR);
         }
     }
 
@@ -130,6 +135,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case STATUS_TEXT:
                         answer.setText("");
                         break;
+                    case STATUS_EIGHT_BALL:
+                        answer.setText("");
+                        handler.sendEmptyMessage(STATUS_PULSE_ANIMATION);
+                        break;
 
                 }
 
@@ -152,6 +161,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             handler.sendEmptyMessage(STATUS_DOWNLOAD_ANIMATION);
                             TimeUnit.SECONDS.sleep(3);
                             handler.sendEmptyMessage(STATUS_RANDOM);
+                            handler.sendEmptyMessageDelayed(STATUS_EIGHT_BALL, 10000);
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }

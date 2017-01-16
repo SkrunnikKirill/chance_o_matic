@@ -56,22 +56,28 @@ public class BackgroundActivity extends Activity implements Constants {
                 view.setBackgroundColor(Color.GREEN);
                 switch (i) {
                     case 0:
-                        broadcastData(R.drawable.first_background, R.drawable.ball_eight_first_anim, R.drawable.ball_download_first_anim, R.drawable.ball_first, R.color.yellow);
+                        broadcastData(R.drawable.first_background, R.drawable.ball_eight_first_anim, R.drawable.ball_download_first_anim,
+                                R.drawable.ball_first, R.color.yellow, R.color.white);
                         break;
                     case 1:
-                        broadcastData(R.drawable.second_background, R.drawable.ball_eight_second_anim, R.drawable.ball_download_second_anim, R.drawable.ball_second, R.color.orange);
+                        broadcastData(R.drawable.second_background, R.drawable.ball_eight_second_anim, R.drawable.ball_download_second_anim,
+                                R.drawable.ball_second, R.color.orange, R.color.white);
                         break;
                     case 2:
-                        broadcastData(R.drawable.third_background, R.drawable.ball_eight_third_anim, R.drawable.ball_download_third_anim, R.drawable.ball_third, R.color.blue);
+                        broadcastData(R.drawable.third_background, R.drawable.ball_eight_third_anim, R.drawable.ball_download_third_anim,
+                                R.drawable.ball_third, R.color.blue, R.color.white);
                         break;
                     case 3:
-                        broadcastData(R.drawable.fourth_background, R.drawable.ball_eight_fourth_anim, R.drawable.ball_download_fourth_anim, R.drawable.ball_fourth, R.color.red);
+                        broadcastData(R.drawable.fourth_background, R.drawable.ball_eight_fourth_anim, R.drawable.ball_download_fourth_anim,
+                                R.drawable.ball_fourth, R.color.red, R.color.red);
                         break;
                     case 4:
-                        broadcastData(R.drawable.fifth_background, R.drawable.ball_eight_fifth_anim, R.drawable.ball_download_fifth_anim, R.drawable.ball_fifth, R.color.dark_blue);
+                        broadcastData(R.drawable.fifth_background, R.drawable.ball_eight_fifth_anim, R.drawable.ball_download_fifth_anim,
+                                R.drawable.ball_fifth, R.color.dark_blue, R.color.dark_blue);
                         break;
                     case 5:
-                        broadcastData(R.drawable.sixth_background, R.drawable.ball_eight_sixth_anim, R.drawable.ball_download_sixth_anim, R.drawable.ball_sixth, R.color.pink);
+                        broadcastData(R.drawable.sixth_background, R.drawable.ball_eight_sixth_anim, R.drawable.ball_download_sixth_anim,
+                                R.drawable.ball_sixth, R.color.pink, R.color.pink);
                         break;
                 }
 
@@ -79,15 +85,16 @@ public class BackgroundActivity extends Activity implements Constants {
         }));
     }
 
-    private void broadcastData(int background, int ballEight, int ballDownload, int ball, int color) {
+    private void broadcastData(int background, int ballEight, int ballDownload, int ball, int color, int colorBackgroundText) {
         Intent intent = new Intent(BackgroundActivity.this, MainActivity.class);
         intent.putExtra("background", background);
         intent.putExtra("background_eight_ball", ballEight);
         intent.putExtra("background_download_ball", ballDownload);
         intent.putExtra("ball", ball);
+        intent.putExtra("color_background_text", colorBackgroundText);
         intent.putExtra("text_color", color);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
+        startActivityForResult(intent, Intent.FLAG_ACTIVITY_CLEAR_TOP);
         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
     }
 
