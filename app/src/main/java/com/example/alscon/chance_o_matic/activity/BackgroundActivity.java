@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class BackgroundActivity extends Activity implements Constants {
     private final String recyclerViewTitleText[] = {
-            "Android", "RecyclerView", "Android List", "GridView", "ListView", "Tutorial"
+            "Beige Wall", "Orange Space", "Morning Dew", "Sea Deep", "Light Winter", "Aqua Red"
     };
     private final int recyclerViewImages[] = {
             R.drawable.first_background_eight, R.drawable.second_background_eight, R.drawable.third_background_eight,

@@ -157,6 +157,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void run() {
                         try {
+                            handler.removeMessages(STATUS_EIGHT_BALL);
                             handler.sendEmptyMessage(STATUS_TEXT);
                             handler.sendEmptyMessage(STATUS_DOWNLOAD_ANIMATION);
                             TimeUnit.SECONDS.sleep(3);
